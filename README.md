@@ -219,6 +219,10 @@ easy to fork and contribute any changes back upstream.
     ```sh
     $ exec "$SHELL"
     ```
+    **NOTE:** fish shell should be restarted or reintialized with the below command.
+    ```fish
+    exec fish
+    ```
 5. **Install Python versions into `$(pyenv root)/versions`.**
    For example, to download and install Python 2.7.8, run:
     ```sh
