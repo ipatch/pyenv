@@ -208,6 +208,15 @@ easy to fork and contribute any changes back upstream.
     **Zsh note**: Modify your `~/.zshenv` file instead of `~/.bash_profile`.
     **Ubuntu and Fedora note**: Modify your `~/.bashrc` file instead of `~/.bash_profile`.
 
+    **fish shell note**: Edit `~/.config/fish/config.fish` file and add the below check for `pyenv`
+    ```fish
+    if type -q pyenv
+      set -gx PYENV_ROOT $HOME/.pyenv
+      status --is-interactive; and pyenv init - | source
+    end
+    ```
+    Alternatively, a `042_load_pyenv.fish` file can be created in `~/.config/fish/conf.d/` with the above code snippet placed within it.
+
     **General warning**: There are some systems where the `BASH_ENV` variable is configured
     to point to `.bashrc`. On such systems you should almost certainly put the abovementioned line
     `eval "$(pyenv init -)"` into `.bash_profile`, and **not** into `.bashrc`. Otherwise you
